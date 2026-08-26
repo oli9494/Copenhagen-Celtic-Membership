@@ -10,7 +10,6 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
-  <!-- iPhone Home Screen / App settings -->
   <meta
     name="apple-mobile-web-app-capable"
     content="yes"
@@ -36,8 +35,7 @@
     content="#064f32"
   >
 
-  <!-- EXACT COPENHAGEN CELTIC BADGE -->
-  <!-- This is also used as the iPhone Home Screen icon -->
+  <!-- iPhone Home Screen icon -->
   <link
     rel="apple-touch-icon"
     href="Celtic%20Badge.png"
@@ -52,9 +50,9 @@
       box-sizing: border-box;
     }
 
+
     html,
     body {
-
       margin: 0;
       padding: 0;
 
@@ -69,16 +67,13 @@
         sans-serif;
 
       overflow: hidden;
-
     }
 
+
     body {
-
       width: 100vw;
-
       height: 100vh;
       height: 100dvh;
-
     }
 
 
@@ -99,7 +94,6 @@
       flex-direction: column;
 
       overflow: hidden;
-
     }
 
 
@@ -111,71 +105,87 @@
 
       flex: 0 0 auto;
 
+      min-height: 145px;
+
       background: #064f32;
 
       padding:
-        max(10px, env(safe-area-inset-top))
+        max(12px, env(safe-area-inset-top))
         18px
-        10px;
+        14px;
 
       display: flex;
-
       align-items: center;
 
-      gap: 14px;
-
+      gap: 17px;
     }
+
 
     .badge {
 
-      width: 68px;
-      height: 68px;
+      width: 94px;
+      height: 94px;
 
       object-fit: contain;
 
       flex-shrink: 0;
-
     }
+
 
     .header-text {
 
       flex: 1;
 
-      text-align: left;
+      text-align: center;
 
+      padding-right: 8px;
     }
+
 
     .club-name {
 
       color: #ffffff;
 
-      font-size: 25px;
+      font-size: clamp(27px, 7vw, 38px);
 
       font-weight: 900;
 
-      line-height: 1;
+      line-height: 1.02;
 
-      letter-spacing: .2px;
-
+      letter-spacing: .3px;
     }
+
 
     .membership-title {
 
+      margin-top: 10px;
+
       color: #c3a361;
 
-      font-size: 10px;
+      font-size: clamp(10px, 2.7vw, 14px);
 
       font-weight: 700;
 
-      letter-spacing: 1.8px;
+      letter-spacing: 2px;
+    }
 
-      margin-top: 7px;
 
+    .title-line {
+
+      width: 125px;
+
+      height: 2px;
+
+      margin:
+        10px auto
+        0;
+
+      background: #c3a361;
     }
 
 
     /* ========================================
-       MAIN BODY
+       MAIN CONTENT
        ======================================== */
 
     .content {
@@ -186,48 +196,38 @@
 
       padding:
         12px
-        20px
-        max(9px, env(safe-area-inset-bottom));
+        22px
+        max(10px, env(safe-area-inset-bottom));
 
       display: flex;
 
       flex-direction: column;
 
+      align-items: center;
+
       justify-content: space-between;
 
       text-align: center;
-
-      gap: 7px;
-
     }
 
 
     /* ========================================
-       MEMBER DETAILS
+       LARGE MEMBER PHOTO
        ======================================== */
 
-    .member-area {
+    .photo-wrap {
 
       flex: 0 0 auto;
 
+      margin-top: -4px;
     }
 
-    .member {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 15px;
-
-      text-align: left;
-
-    }
 
     .photo {
 
-      width: 82px;
-      height: 82px;
+      width: clamp(150px, 40vw, 195px);
+
+      height: clamp(150px, 40vw, 195px);
 
       border-radius: 50%;
 
@@ -235,245 +235,129 @@
 
       object-position: center 25%;
 
-      flex-shrink: 0;
+      display: block;
+
+      border: 5px solid #ffffff;
 
       background: #eeeeee;
 
       box-shadow:
-        0 3px 10px
-        rgba(0,0,0,.16);
-
+        0 5px 18px
+        rgba(0,0,0,.18);
     }
 
-    .member-details {
 
-      flex: 1;
-
-      min-width: 0;
-
-    }
+    /* ========================================
+       MEMBER DETAILS
+       ======================================== */
 
     .member-name {
 
+      margin-top: 7px;
+
       color: #064f32;
 
-      font-size: 26px;
+      font-size: clamp(29px, 8vw, 40px);
 
       font-weight: 900;
 
-      line-height: 1.05;
-
+      line-height: 1;
     }
+
 
     .member-id {
 
-      margin-top: 5px;
+      margin-top: 4px;
 
       color: #707772;
 
-      font-size: 13px;
-
+      font-size: clamp(14px, 4vw, 18px);
     }
+
+
+    /* ========================================
+       ACTIVE MEMBER BAR
+       ======================================== */
 
     .active {
 
-      display: inline-block;
+      width: 100%;
 
-      margin-top: 8px;
+      max-width: 390px;
+
+      margin-top: 7px;
 
       padding:
-        7px
-        13px;
+        11px
+        15px;
 
-      border-radius: 999px;
+      border-radius: 11px;
 
       background: #08783e;
 
       color: #ffffff;
 
-      font-size: 10px;
+      font-size: clamp(14px, 4vw, 18px);
 
       font-weight: 900;
 
-      letter-spacing: .3px;
+      letter-spacing: .2px;
 
+      box-shadow:
+        0 2px 7px
+        rgba(0,0,0,.10);
     }
 
 
     /* ========================================
-       DISCOUNT / JEFFERY
+       LIVE MEMBERSHIP CARD
        ======================================== */
 
-    .discount-section {
+    .security {
 
-      flex: 0 0 auto;
+      width: 100%;
 
-      padding: 9px 0;
+      max-width: 390px;
 
-      border-top:
-        1px solid #e0e0e0;
+      padding:
+        11px
+        13px;
 
-      border-bottom:
-        1px solid #e0e0e0;
+      background: #f3fbf6;
+
+      border:
+        2px solid #08783e;
+
+      border-radius: 11px;
+
+      color: #08783e;
+
+      font-size: 12px;
+
+      font-weight: 900;
+
+      letter-spacing: .7px;
+    }
+
+
+    .live-title {
 
       display: flex;
 
       align-items: center;
 
       justify-content: center;
-
-      gap: 20px;
-
     }
 
-    .discount {
-
-      min-width: 90px;
-
-    }
-
-    .discount-number {
-
-      color: #064f32;
-
-      font-size: 37px;
-
-      line-height: 1;
-
-      font-weight: 900;
-
-    }
-
-    .discount-text {
-
-      margin-top: 4px;
-
-      color: #064f32;
-
-      font-size: 9px;
-
-      font-weight: 900;
-
-      letter-spacing: .3px;
-
-    }
-
-    .divider {
-
-      width: 1px;
-
-      height: 52px;
-
-      background: #dddddd;
-
-    }
-
-    .jeffery {
-
-      width: 135px;
-
-      max-width: 38vw;
-
-      height: 60px;
-
-      object-fit: contain;
-
-    }
-
-
-    /* ========================================
-       QR CODE
-       ======================================== */
-
-    .qr-section {
-
-      flex: 0 0 auto;
-
-      text-align: center;
-
-    }
-
-    .qr-title {
-
-      color: #064f32;
-
-      font-size: 10px;
-
-      font-weight: 900;
-
-      letter-spacing: .9px;
-
-      margin-bottom: 5px;
-
-    }
-
-    .qr {
-
-      display: block;
-
-      width: 170px;
-      height: 170px;
-
-      max-height: 24vh;
-
-      max-width: 45vw;
-
-      object-fit: contain;
-
-      margin: 0 auto;
-
-      background: white;
-
-    }
-
-    .qr-description {
-
-      margin-top: 3px;
-
-      color: #707772;
-
-      font-size: 9px;
-
-    }
-
-
-    /* ========================================
-       LIVE SECURITY
-       ======================================== */
-
-    .security {
-
-      flex: 0 0 auto;
-
-      padding:
-        7px
-        10px;
-
-      background: #f3fbf6;
-
-      border:
-        1px solid #b7d9c6;
-
-      border-radius: 8px;
-
-      color: #08783e;
-
-      font-size: 9px;
-
-      font-weight: 900;
-
-      letter-spacing: .3px;
-
-    }
 
     .pulse {
 
       display: inline-block;
 
-      width: 7px;
-      height: 7px;
+      width: 10px;
+      height: 10px;
 
-      margin-right: 4px;
+      margin-right: 7px;
 
       border-radius: 50%;
 
@@ -483,55 +367,57 @@
         pulse
         1.2s
         infinite;
-
     }
+
 
     @keyframes pulse {
 
       0% {
-
         opacity: .35;
-
-        transform:
-          scale(.8);
-
+        transform: scale(.8);
       }
 
       50% {
-
         opacity: 1;
-
-        transform:
-          scale(1.3);
-
+        transform: scale(1.3);
       }
 
       100% {
-
         opacity: .35;
-
-        transform:
-          scale(.8);
-
+        transform: scale(.8);
       }
-
     }
+
 
     #clock {
 
-      margin-top: 3px;
+      margin-top: 5px;
 
-      font-size: 13px;
+      color: #17231d;
+
+      font-size: clamp(19px, 5.3vw, 25px);
 
       font-weight: 900;
-
     }
+
+
+    #date {
+
+      margin-top: 2px;
+
+      color: #555555;
+
+      font-size: 10px;
+
+      font-weight: 400;
+    }
+
 
     .moving-line {
 
-      height: 3px;
+      height: 4px;
 
-      margin-top: 5px;
+      margin-top: 7px;
 
       border-radius: 10px;
 
@@ -543,33 +429,104 @@
           #08783e
         );
 
-      background-size:
-        200% 100%;
+      background-size: 200% 100%;
 
       animation:
         moving
         1.8s
         linear
         infinite;
-
     }
+
 
     @keyframes moving {
 
       from {
-
-        background-position:
-          200% 0;
-
+        background-position: 200% 0;
       }
 
       to {
-
-        background-position:
-          -200% 0;
-
+        background-position: -200% 0;
       }
+    }
 
+
+    /* ========================================
+       DISCOUNT + JEFFERY
+       ======================================== */
+
+    .discount-section {
+
+      width: 100%;
+
+      max-width: 400px;
+
+      padding:
+        9px
+        0;
+
+      border-top:
+        1px solid #e0e0e0;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 24px;
+    }
+
+
+    .discount {
+
+      min-width: 105px;
+    }
+
+
+    .discount-number {
+
+      color: #064f32;
+
+      font-size: clamp(42px, 11vw, 56px);
+
+      line-height: .9;
+
+      font-weight: 900;
+    }
+
+
+    .discount-text {
+
+      margin-top: 6px;
+
+      color: #064f32;
+
+      font-size: 10px;
+
+      font-weight: 900;
+    }
+
+
+    .divider {
+
+      width: 1px;
+
+      height: 65px;
+
+      background: #dddddd;
+    }
+
+
+    .jeffery {
+
+      width: 155px;
+
+      max-width: 42vw;
+
+      height: 78px;
+
+      object-fit: contain;
     }
 
 
@@ -577,133 +534,264 @@
        EXPIRY
        ======================================== */
 
-    .expiry {
+    .expiry-box {
 
-      flex: 0 0 auto;
+      width: 100%;
 
-      color: #656e69;
+      max-width: 400px;
 
-      font-size: 10px;
+      padding:
+        9px
+        10px;
 
+      border:
+        1px solid #e3e3e3;
+
+      border-radius: 10px;
+
+      background: #fafafa;
+
+      color: #202020;
+
+      font-size: 12px;
+    }
+
+
+    .expiry-box strong {
+
+      font-size: 13px;
     }
 
 
     /* ========================================
-       SMALLER IPHONES
+       SHORTER IPHONES
        ======================================== */
 
-    @media (max-height: 750px) {
+    @media (max-height: 780px) {
 
       .header {
 
+        min-height: 118px;
+
         padding-top:
           max(
-            7px,
+            8px,
             env(safe-area-inset-top)
           );
 
-        padding-bottom: 7px;
-
+        padding-bottom: 8px;
       }
+
 
       .badge {
 
-        width: 58px;
-        height: 58px;
-
+        width: 76px;
+        height: 76px;
       }
+
 
       .club-name {
 
-        font-size: 22px;
-
+        font-size: 27px;
       }
+
 
       .membership-title {
 
-        font-size: 9px;
+        margin-top: 6px;
 
-        margin-top: 5px;
-
+        font-size: 10px;
       }
+
+
+      .title-line {
+
+        margin-top: 6px;
+
+        width: 95px;
+      }
+
 
       .content {
 
-        padding-top: 8px;
+        padding-top: 7px;
 
         padding-bottom:
           max(
             6px,
             env(safe-area-inset-bottom)
           );
-
-        gap: 4px;
-
       }
+
 
       .photo {
 
-        width: 70px;
-        height: 70px;
-
+        width: 135px;
+        height: 135px;
       }
+
 
       .member-name {
 
-        font-size: 23px;
+        margin-top: 4px;
 
+        font-size: 28px;
       }
+
+
+      .member-id {
+
+        font-size: 13px;
+      }
+
 
       .active {
 
-        margin-top: 5px;
+        margin-top: 4px;
 
         padding:
-          5px
-          11px;
+          8px
+          12px;
 
+        font-size: 13px;
       }
+
+
+      .security {
+
+        padding:
+          7px
+          10px;
+      }
+
+
+      #clock {
+
+        margin-top: 3px;
+
+        font-size: 18px;
+      }
+
+
+      .moving-line {
+
+        margin-top: 4px;
+      }
+
 
       .discount-section {
 
         padding:
-          5px
+          4px
           0;
-
       }
+
 
       .discount-number {
 
-        font-size: 32px;
-
+        font-size: 40px;
       }
+
 
       .divider {
 
-        height: 44px;
-
+        height: 50px;
       }
+
+
+      .jeffery {
+
+        height: 57px;
+      }
+
+
+      .expiry-box {
+
+        padding:
+          6px
+          8px;
+
+        font-size: 10px;
+      }
+
+
+      .expiry-box strong {
+
+        font-size: 11px;
+      }
+
+    }
+
+
+    /* ========================================
+       VERY SHORT SCREENS
+       ======================================== */
+
+    @media (max-height: 680px) {
+
+      .header {
+
+        min-height: 100px;
+      }
+
+
+      .badge {
+
+        width: 65px;
+        height: 65px;
+      }
+
+
+      .club-name {
+
+        font-size: 23px;
+      }
+
+
+      .photo {
+
+        width: 115px;
+        height: 115px;
+      }
+
+
+      .member-name {
+
+        font-size: 25px;
+      }
+
+
+      .security {
+
+        font-size: 10px;
+      }
+
+
+      #clock {
+
+        font-size: 16px;
+      }
+
+
+      .discount-number {
+
+        font-size: 34px;
+      }
+
+
+      .discount-section {
+
+        gap: 16px;
+      }
+
 
       .jeffery {
 
         height: 48px;
-
-      }
-
-      .qr {
-
-        width: 145px;
-        height: 145px;
-
-      }
-
-      .security {
-
-        padding: 5px 8px;
-
       }
 
     }
+
 
   </style>
 
@@ -716,14 +804,11 @@
   <div class="card">
 
 
-    <!-- =====================================
-         HEADER
-         ===================================== -->
+    <!-- HEADER -->
 
     <div class="header">
 
 
-      <!-- NEW BADGE FILE -->
       <img
         class="badge"
         src="Celtic%20Badge.png"
@@ -748,60 +833,88 @@
         </div>
 
 
+        <div class="title-line">
+
+        </div>
+
+
       </div>
 
 
     </div>
 
 
-    <!-- =====================================
-         CONTENT
-         ===================================== -->
+    <!-- CONTENT -->
 
     <div class="content">
 
 
-      <!-- MEMBER -->
+      <!-- LARGE MEMBER PHOTO -->
 
-      <div class="member-area">
-
-
-        <div class="member">
+      <div class="photo-wrap">
 
 
-          <img
-            class="photo"
-            src="member-photo.jpeg"
-            alt="Member photo"
-          >
+        <img
+          class="photo"
+          src="member-photo.jpeg"
+          alt="Member photo"
+        >
 
 
-          <div class="member-details">
+        <div class="member-name">
+
+          OLI DOBSON
+
+        </div>
 
 
-            <div class="member-name">
+        <div class="member-id">
 
-              OLI DOBSON
+          CC-001
 
-            </div>
-
-
-            <div class="member-id">
-
-              CC-001
-
-            </div>
+        </div>
 
 
-            <div class="active">
+        <div class="active">
 
-              ● ACTIVE MEMBER
+          ✓ ACTIVE MEMBER
 
-            </div>
+        </div>
 
 
-          </div>
+      </div>
 
+
+      <!-- LIVE MEMBERSHIP CARD -->
+
+      <div class="security">
+
+
+        <div class="live-title">
+
+
+          <span class="pulse">
+
+          </span>
+
+
+          LIVE MEMBERSHIP CARD
+
+
+        </div>
+
+
+        <div id="clock">
+
+        </div>
+
+
+        <div id="date">
+
+        </div>
+
+
+        <div class="moving-line">
 
         </div>
 
@@ -849,64 +962,9 @@
       </div>
 
 
-      <!-- QR -->
+      <!-- VALID UNTIL -->
 
-      <div class="qr-section">
-
-
-        <div class="qr-title">
-
-          SCAN TO VERIFY MEMBERSHIP
-
-        </div>
-
-
-        <img
-          class="qr"
-          src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&margin=10&data=https%3A%2F%2Fscript.google.com%2Fmacros%2Fs%2FAKfycbzJ3DIzgru3loxs53Dcj8P0rDOQjx4IgTxJ9VzvbNx5DWjYe3rGBDgYvJ9Bgs5b0gBY%2Fexec%3Fid%3DCC-001"
-          alt="Membership verification QR code"
-        >
-
-
-        <div class="qr-description">
-
-          Bar staff scan using a normal phone camera
-
-        </div>
-
-
-      </div>
-
-
-      <!-- LIVE SECURITY -->
-
-      <div class="security">
-
-
-        <span class="pulse">
-
-        </span>
-
-
-        LIVE MEMBERSHIP CARD
-
-
-        <div id="clock">
-
-        </div>
-
-
-        <div class="moving-line">
-
-        </div>
-
-
-      </div>
-
-
-      <!-- EXPIRY -->
-
-      <div class="expiry">
+      <div class="expiry-box">
 
         Valid until
 
@@ -925,10 +983,6 @@
   </div>
 
 
-  <!-- =====================================
-       LIVE CLOCK
-       ===================================== -->
-
   <script>
 
 
@@ -945,8 +999,13 @@
         );
 
 
-      if (clock) {
+      const date =
+        document.getElementById(
+          "date"
+        );
 
+
+      if (clock) {
 
         clock.textContent =
           now.toLocaleTimeString(
@@ -958,6 +1017,21 @@
             }
           );
 
+      }
+
+
+      if (date) {
+
+        date.textContent =
+          now.toLocaleDateString(
+            "en-GB",
+            {
+              weekday: "long",
+              day: "numeric",
+              month: "long",
+              year: "numeric"
+            }
+          );
 
       }
 
