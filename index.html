@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
 
-  <!-- Makes Home Screen version behave more like an app -->
+  <!-- iPhone Home Screen / App settings -->
   <meta
     name="apple-mobile-web-app-capable"
     content="yes"
@@ -36,10 +36,10 @@
     content="#064f32"
   >
 
-  <!-- This will become the iPhone Home Screen icon -->
+  <!-- COPENHAGEN CELTIC HOME SCREEN ICON -->
   <link
     rel="apple-touch-icon"
-    href="celtic-icon.png"
+    href="celtic-icon.jpeg"
   >
 
   <title>Copenhagen Celtic Membership</title>
@@ -51,8 +51,10 @@
       box-sizing: border-box;
     }
 
+
     html,
     body {
+
       margin: 0;
       padding: 0;
 
@@ -65,55 +67,71 @@
         Arial,
         Helvetica,
         sans-serif;
+
+      overflow: hidden;
+
     }
 
 
     body {
-      min-height: 100vh;
-      min-height: 100dvh;
+
+      width: 100vw;
+
+      height: 100vh;
+      height: 100dvh;
+
     }
 
+
+    /* ========================================
+       COMPLETE MEMBERSHIP CARD
+       ======================================== */
 
     .card {
 
       width: 100vw;
 
-      min-height: 100vh;
-      min-height: 100dvh;
+      height: 100vh;
+      height: 100dvh;
 
       background: #ffffff;
 
       display: flex;
       flex-direction: column;
 
+      overflow: hidden;
+
     }
 
 
-    /* ============================
+    /* ========================================
        HEADER
-       ============================ */
+       ======================================== */
 
     .header {
+
+      flex: 0 0 auto;
 
       background: #064f32;
 
       padding:
-        max(18px, env(safe-area-inset-top))
-        22px
-        18px;
+        max(10px, env(safe-area-inset-top))
+        18px
+        10px;
 
       display: flex;
+
       align-items: center;
 
-      gap: 18px;
+      gap: 14px;
 
     }
 
 
     .badge {
 
-      width: 92px;
-      height: 92px;
+      width: 68px;
+      height: 68px;
 
       object-fit: contain;
 
@@ -126,18 +144,22 @@
 
       flex: 1;
 
+      text-align: left;
+
     }
 
 
     .club-name {
 
-      color: white;
+      color: #ffffff;
 
-      font-size: 29px;
+      font-size: 25px;
 
       font-weight: 900;
 
       line-height: 1;
+
+      letter-spacing: .2px;
 
     }
 
@@ -146,27 +168,31 @@
 
       color: #c3a361;
 
-      font-size: 12px;
+      font-size: 10px;
 
-      letter-spacing: 2px;
+      font-weight: 700;
 
-      margin-top: 9px;
+      letter-spacing: 1.8px;
+
+      margin-top: 7px;
 
     }
 
 
-    /* ============================
-       MAIN CARD
-       ============================ */
+    /* ========================================
+       MAIN BODY
+       ======================================== */
 
     .content {
 
       flex: 1;
 
+      min-height: 0;
+
       padding:
-        22px
-        24px
-        max(18px, env(safe-area-inset-bottom));
+        12px
+        20px
+        max(9px, env(safe-area-inset-bottom));
 
       display: flex;
 
@@ -175,6 +201,19 @@
       justify-content: space-between;
 
       text-align: center;
+
+      gap: 7px;
+
+    }
+
+
+    /* ========================================
+       MEMBER DETAILS
+       ======================================== */
+
+    .member-area {
+
+      flex: 0 0 auto;
 
     }
 
@@ -185,7 +224,7 @@
 
       align-items: center;
 
-      gap: 20px;
+      gap: 15px;
 
       text-align: left;
 
@@ -194,8 +233,8 @@
 
     .photo {
 
-      width: 110px;
-      height: 110px;
+      width: 82px;
+      height: 82px;
 
       border-radius: 50%;
 
@@ -205,9 +244,20 @@
 
       flex-shrink: 0;
 
+      background: #eeeeee;
+
       box-shadow:
-        0 4px 14px
-        rgba(0,0,0,.18);
+        0 3px 10px
+        rgba(0,0,0,.16);
+
+    }
+
+
+    .member-details {
+
+      flex: 1;
+
+      min-width: 0;
 
     }
 
@@ -216,7 +266,7 @@
 
       color: #064f32;
 
-      font-size: 31px;
+      font-size: 26px;
 
       font-weight: 900;
 
@@ -227,11 +277,11 @@
 
     .member-id {
 
-      margin-top: 7px;
+      margin-top: 5px;
 
       color: #707772;
 
-      font-size: 15px;
+      font-size: 13px;
 
     }
 
@@ -240,38 +290,42 @@
 
       display: inline-block;
 
-      margin-top: 12px;
+      margin-top: 8px;
 
       padding:
-        9px
-        16px;
+        7px
+        13px;
 
       border-radius: 999px;
 
       background: #08783e;
 
-      color: white;
+      color: #ffffff;
 
-      font-size: 12px;
+      font-size: 10px;
 
       font-weight: 900;
+
+      letter-spacing: .3px;
 
     }
 
 
-    /* ============================
-       DISCOUNT
-       ============================ */
+    /* ========================================
+       DISCOUNT / JEFFERY
+       ======================================== */
 
     .discount-section {
 
-      padding: 17px 0;
+      flex: 0 0 auto;
+
+      padding: 9px 0;
 
       border-top:
-        1px solid #dddddd;
+        1px solid #e0e0e0;
 
       border-bottom:
-        1px solid #dddddd;
+        1px solid #e0e0e0;
 
       display: flex;
 
@@ -279,7 +333,14 @@
 
       justify-content: center;
 
-      gap: 24px;
+      gap: 20px;
+
+    }
+
+
+    .discount {
+
+      min-width: 90px;
 
     }
 
@@ -288,7 +349,7 @@
 
       color: #064f32;
 
-      font-size: 48px;
+      font-size: 37px;
 
       line-height: 1;
 
@@ -299,13 +360,15 @@
 
     .discount-text {
 
-      margin-top: 6px;
+      margin-top: 4px;
 
       color: #064f32;
 
-      font-size: 11px;
+      font-size: 9px;
 
       font-weight: 900;
+
+      letter-spacing: .3px;
 
     }
 
@@ -313,7 +376,8 @@
     .divider {
 
       width: 1px;
-      height: 70px;
+
+      height: 52px;
 
       background: #dddddd;
 
@@ -322,74 +386,102 @@
 
     .jeffery {
 
-      width: 170px;
+      width: 135px;
 
-      max-height: 85px;
+      max-width: 38vw;
+
+      height: 60px;
 
       object-fit: contain;
 
     }
 
 
-    /* ============================
-       QR
-       ============================ */
+    /* ========================================
+       QR CODE
+       ======================================== */
+
+    .qr-section {
+
+      flex: 0 0 auto;
+
+      text-align: center;
+
+    }
+
 
     .qr-title {
 
       color: #064f32;
 
-      font-size: 13px;
+      font-size: 10px;
 
       font-weight: 900;
 
-      letter-spacing: 1px;
+      letter-spacing: .9px;
 
-      margin-bottom: 8px;
+      margin-bottom: 5px;
 
     }
 
 
     .qr {
 
-      width: min(58vw, 240px);
+      display: block;
 
-      height: auto;
+      width: 170px;
+      height: 170px;
+
+      max-height: 24vh;
+
+      max-width: 45vw;
+
+      object-fit: contain;
+
+      margin: 0 auto;
+
+      background: white;
 
     }
 
 
     .qr-description {
 
-      margin-top: 5px;
+      margin-top: 3px;
 
       color: #707772;
 
-      font-size: 11px;
+      font-size: 9px;
 
     }
 
 
-    /* ============================
+    /* ========================================
        LIVE SECURITY
-       ============================ */
+       ======================================== */
 
     .security {
 
-      padding: 10px;
+      flex: 0 0 auto;
+
+      padding:
+        7px
+        10px;
 
       background: #f3fbf6;
 
       border:
         1px solid #b7d9c6;
 
-      border-radius: 10px;
+      border-radius: 8px;
 
       color: #08783e;
 
-      font-size: 11px;
+      font-size: 9px;
 
       font-weight: 900;
+
+      letter-spacing: .3px;
 
     }
 
@@ -398,10 +490,10 @@
 
       display: inline-block;
 
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
 
-      margin-right: 5px;
+      margin-right: 4px;
 
       border-radius: 50%;
 
@@ -418,18 +510,30 @@
     @keyframes pulse {
 
       0% {
+
         opacity: .35;
-        transform: scale(.8);
+
+        transform:
+          scale(.8);
+
       }
 
       50% {
+
         opacity: 1;
-        transform: scale(1.3);
+
+        transform:
+          scale(1.3);
+
       }
 
       100% {
+
         opacity: .35;
-        transform: scale(.8);
+
+        transform:
+          scale(.8);
+
       }
 
     }
@@ -437,18 +541,20 @@
 
     #clock {
 
-      margin-top: 5px;
+      margin-top: 3px;
 
-      font-size: 16px;
+      font-size: 13px;
+
+      font-weight: 900;
 
     }
 
 
     .moving-line {
 
-      height: 4px;
+      height: 3px;
 
-      margin-top: 8px;
+      margin-top: 5px;
 
       border-radius: 10px;
 
@@ -475,60 +581,167 @@
     @keyframes moving {
 
       from {
-        background-position: 200% 0;
+
+        background-position:
+          200% 0;
+
       }
 
       to {
-        background-position: -200% 0;
+
+        background-position:
+          -200% 0;
+
       }
 
     }
 
+
+    /* ========================================
+       EXPIRY
+       ======================================== */
 
     .expiry {
 
+      flex: 0 0 auto;
+
       color: #656e69;
 
-      font-size: 12px;
+      font-size: 10px;
 
     }
 
 
-    /* Smaller iPhones */
+    /* ========================================
+       SMALLER IPHONES
+       ======================================== */
 
     @media (max-height: 750px) {
 
-      .badge {
-        width: 75px;
-        height: 75px;
+      .header {
+
+        padding-top:
+          max(
+            7px,
+            env(safe-area-inset-top)
+          );
+
+        padding-bottom: 7px;
+
       }
 
-      .header {
-        padding-bottom: 12px;
+
+      .badge {
+
+        width: 58px;
+        height: 58px;
+
       }
+
 
       .club-name {
-        font-size: 25px;
+
+        font-size: 22px;
+
       }
 
-      .photo {
-        width: 90px;
-        height: 90px;
+
+      .membership-title {
+
+        font-size: 9px;
+
+        margin-top: 5px;
+
       }
 
-      .member-name {
-        font-size: 27px;
-      }
-
-      .qr {
-        width: 190px;
-      }
 
       .content {
-        padding-top: 14px;
+
+        padding-top: 8px;
+
+        padding-bottom:
+          max(
+            6px,
+            env(safe-area-inset-bottom)
+          );
+
+        gap: 4px;
+
+      }
+
+
+      .photo {
+
+        width: 70px;
+        height: 70px;
+
+      }
+
+
+      .member-name {
+
+        font-size: 23px;
+
+      }
+
+
+      .active {
+
+        margin-top: 5px;
+
+        padding:
+          5px
+          11px;
+
+      }
+
+
+      .discount-section {
+
+        padding:
+          5px
+          0;
+
+      }
+
+
+      .discount-number {
+
+        font-size: 32px;
+
+      }
+
+
+      .divider {
+
+        height: 44px;
+
+      }
+
+
+      .jeffery {
+
+        height: 48px;
+
+      }
+
+
+      .qr {
+
+        width: 145px;
+        height: 145px;
+
+      }
+
+
+      .security {
+
+        padding: 5px 8px;
+
       }
 
     }
+
 
   </style>
 
@@ -541,12 +754,16 @@
   <div class="card">
 
 
+    <!-- =====================================
+         HEADER
+         ===================================== -->
+
     <div class="header">
 
 
       <img
         class="badge"
-        src="celtic-icon.png"
+        src="celtic-icon.jpeg"
         alt="Copenhagen Celtic"
       >
 
@@ -574,28 +791,29 @@
     </div>
 
 
+    <!-- =====================================
+         CONTENT
+         ===================================== -->
+
     <div class="content">
 
 
-      <div>
+      <!-- MEMBER -->
+
+      <div class="member-area">
 
 
         <div class="member">
 
 
-          <!--
-          We will replace this with your actual
-          member photo in the next step.
-          -->
-
           <img
             class="photo"
-            src="member-photo.jpg"
+            src="member-photo.jpeg"
             alt="Member photo"
           >
 
 
-          <div>
+          <div class="member-details">
 
 
             <div class="member-name">
@@ -612,15 +830,15 @@
             </div>
 
 
+            <div class="active">
+
+              ● ACTIVE MEMBER
+
+            </div>
+
+
           </div>
 
-
-        </div>
-
-
-        <div class="active">
-
-          ● ACTIVE MEMBER
 
         </div>
 
@@ -628,10 +846,12 @@
       </div>
 
 
+      <!-- DISCOUNT -->
+
       <div class="discount-section">
 
 
-        <div>
+        <div class="discount">
 
 
           <div class="discount-number">
@@ -658,7 +878,7 @@
 
         <img
           class="jeffery"
-          src="jeffery-logo.png"
+          src="jeffery-logo.jpeg"
           alt="The Jeffery Public House"
         >
 
@@ -666,7 +886,9 @@
       </div>
 
 
-      <div>
+      <!-- QR -->
+
+      <div class="qr-section">
 
 
         <div class="qr-title">
@@ -693,6 +915,8 @@
       </div>
 
 
+      <!-- LIVE SECURITY -->
+
       <div class="security">
 
 
@@ -717,6 +941,8 @@
       </div>
 
 
+      <!-- EXPIRY -->
+
       <div class="expiry">
 
         Valid until
@@ -736,6 +962,10 @@
   </div>
 
 
+  <!-- =====================================
+       LIVE CLOCK
+       ===================================== -->
+
   <script>
 
 
@@ -746,9 +976,16 @@
         new Date();
 
 
-      document
-        .getElementById("clock")
-        .textContent =
+      const clock =
+        document.getElementById(
+          "clock"
+        );
+
+
+      if (clock) {
+
+
+        clock.textContent =
           now.toLocaleTimeString(
             "en-GB",
             {
@@ -757,6 +994,9 @@
               second: "2-digit"
             }
           );
+
+
+      }
 
 
     }
@@ -775,6 +1015,5 @@
 
 
 </body>
-
 
 </html>
