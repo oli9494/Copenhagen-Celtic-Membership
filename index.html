@@ -223,27 +223,28 @@
     }
 
 
-    .photo {
+  .photo {
+  width: clamp(150px, 40vw, 195px);
+  height: clamp(150px, 40vw, 195px);
 
-      width: clamp(150px, 40vw, 195px);
+  border-radius: 50%;
 
-      height: clamp(150px, 40vw, 195px);
+  object-fit: cover;
+  object-position: center 25%;
 
-      border-radius: 50%;
+  display: block;
 
-      object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
 
-      object-position: center 25%;
+  border: 5px solid #ffffff;
 
-      display: block;
+  background: #eeeeee;
 
-      border: 5px solid #ffffff;
-
-      background: #eeeeee;
-
-      box-shadow:
-        0 5px 18px
-        rgba(0,0,0,.18);
+  box-shadow:
+    0 5px 18px
+    rgba(0,0,0,.18);
+}
     }
 
 
